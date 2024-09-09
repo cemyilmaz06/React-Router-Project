@@ -16,7 +16,11 @@ const AppRouter = () => {
         <Routes>
           <Route exact path="/" element={<Home />} />
           <Route path="/Teacher" element={<Teacher />} />
+          
+
           <Route path="/Courses" element={<CourseCard />} />
+
+
           <Route path="/Contact" element={<ContactForm />} />
           <Route path="/Paths" element={<Paths />} />
           <Route path="*" element={<NotFound />} />
