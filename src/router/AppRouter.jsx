@@ -7,6 +7,8 @@ import Teacher from "../pages/Teacher";
 import ContactForm from "../pages/ContactForm";
 import Paths from "../pages/Paths";
 import NotFound from "../pages/NotFound";
+import PrivateRouter from "../router/PrivateRouter";
+import CardDetails from "../pages/CardDetails";
 
 const AppRouter = () => {
   return (
@@ -16,12 +18,18 @@ const AppRouter = () => {
         <Routes>
           <Route exact path="/" element={<Home />} />
           <Route path="/Teacher" element={<Teacher />} />
-          
 
-          <Route path="/Courses" element={<CourseCard />} />
+          <Route path="/Courses" element={<PrivateRouter/>}  >
+            <Route path="" element={<CourseCard />} /> </Route>
+<Route path="/:name" element={<CardDetails/>}/>
 
 
-          <Route path="/Contact" element={<ContactForm />} />
+
+         
+<Route path="/Contact" element={<PrivateRouter/>}  >
+          <Route path="" element={<ContactForm />} />
+          </Route>
+
           <Route path="/Paths" element={<Paths />} />
           <Route path="*" element={<NotFound />} />
         </Routes>

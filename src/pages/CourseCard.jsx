@@ -4,11 +4,12 @@ import Card from "react-bootstrap/Card";
 import Col from "react-bootstrap/esm/Col";
 import Button from "react-bootstrap/Button";
 import data from "../data"
+import { useNavigate } from "react-router-dom";
 
 
 
 const CourseCard = () => {
-
+const navigate=useNavigate();
 
 
   
@@ -29,7 +30,7 @@ const CourseCard = () => {
                 <Card.Body>
                   <Card.Title>{name} </Card.Title>
                   <Card.Text>{text}</Card.Text>
-                  <Button 
+                  <Button onClick={()=>navigate(`/${name}`)}
 
 variant="primary">DETAILS</Button>
                 </Card.Body>
