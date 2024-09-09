@@ -5,7 +5,7 @@ import logo from "../img/logo.png"
 
 const MyNavbar = () => {
   return (
-    <Navbar expand="lg" className="bg-body-tertiary">
+    <Navbar expand="lg" bg="light" >
       <Container>
        <Link to="/">
        <img src={logo} alt="" />
@@ -13,11 +13,12 @@ const MyNavbar = () => {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
-            <NavLink>Home</NavLink>
-            <NavLink>Teacher</NavLink>
-            <NavLink>Courses</NavLink>
-            <NavLink>Contact</NavLink>
-            <NavLink>Paths</NavLink>
+            <NavLink className="nav-link" to="/" style={({isActive})=>({color:"red"})}>Home</NavLink>
+            <NavLink className="nav-link" to="/Teacher">Teacher</NavLink>
+            <NavLink className="nav-link" to="/Courses">Courses</NavLink>
+            <NavLink className="nav-link" to="Contact">Contact</NavLink>
+            <NavLink className="nav-link" to="Paths">Paths</NavLink>
+            <Nav.Link target='blank' href='https://github.com/'>Github</Nav.Link>
             
             
           </Nav>
