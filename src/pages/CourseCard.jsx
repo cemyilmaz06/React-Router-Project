@@ -15,7 +15,7 @@ const navigate=useNavigate();
   
   return (
     <Container>
-      <Row className="g-3 text-center">
+      <Row className="g-3 text-center mt-5">
         {data.map((a) => {
           const{id,name,img,text}=a
        

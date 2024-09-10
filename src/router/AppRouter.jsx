@@ -9,6 +9,7 @@ import Paths from "../pages/Paths";
 import NotFound from "../pages/NotFound";
 import PrivateRouter from "../router/PrivateRouter";
 import CardDetails from "../pages/CardDetails";
+import TeacherDetails from "../pages/TeacherDetails";
 
 const AppRouter = () => {
   return (
@@ -18,7 +19,7 @@ const AppRouter = () => {
         <Routes>
           <Route exact path="/" element={<Home />} />
           <Route path="/Teacher" element={<Teacher />} />
-
+<Route path="/Teacher/:idd" element={<TeacherDetails/>}/>
           <Route path="/Courses" element={<PrivateRouter/>}  >
             <Route path="" element={<CourseCard />} /> </Route>
 <Route path="/:namE" element={<CardDetails/>}/>
