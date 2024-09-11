@@ -1,12 +1,17 @@
 import React, { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 
 const Login = () => {
+  const navigate=useNavigate()
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
-  const handleSubmit=(e)=>(
+  const handleSubmit=(e)=>{
     e.preventDefault()
-    localStorage.setItem("EMAIL", "email").JSON.stringify
-  )
+    localStorage.setItem("EMAIL", JSON.stringify(email) )
+    localStorage.setItem("PASSWORD", JSON.stringify(password) )
+
+    navigate("/Contact")
+  }
   return (
     <div className="container text-center mt-4">
       <h1 className="display-6 text-danger">LOG IN</h1>
