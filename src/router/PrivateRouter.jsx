@@ -5,7 +5,7 @@ const PrivateRouter = () => {
 const email="cmylmz@gmail.com"
 const password= "1234"
 
-  return email === "cmylmz@gmail.com" && password === "123" ? <Outlet/> : <Navigate to="/"/>
+  return email === "cmylmz@gmail.com" && password === "1234" ? <Outlet/> : <Navigate to="/"/>
 
   
 }

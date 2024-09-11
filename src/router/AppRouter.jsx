@@ -10,6 +10,9 @@ import NotFound from "../pages/NotFound";
 import PrivateRouter from "../router/PrivateRouter";
 import CardDetails from "../pages/CardDetails";
 import TeacherDetails from "../pages/TeacherDetails";
+import FS from "../pages/FS";
+import AWS from "../pages/AWS";
+import Login from "../pages/Login";
 
 const AppRouter = () => {
   return (
@@ -18,20 +21,27 @@ const AppRouter = () => {
         <MyNavbar />
         <Routes>
           <Route exact path="/" element={<Home />} />
+
+          <Route path="/Login" element={<Login/>}/>
+          
+
           <Route path="/Teacher" element={<Teacher />} />
-<Route path="/Teacher/:idd" element={<TeacherDetails/>}/>
-          <Route path="/Courses" element={<PrivateRouter/>}  >
-            <Route path="" element={<CourseCard />} /> </Route>
-<Route path="/:namE" element={<CardDetails/>}/>
+          <Route path="/Teacher/:idd" element={<TeacherDetails />} />
+          <Route path="/Courses" element={<PrivateRouter />}>
+            <Route path="" element={<CourseCard />} />{" "}
+          </Route>
+          <Route path="/:namE" element={<CardDetails />} />
 
-
-
-         
-<Route path="/Contact" element={<PrivateRouter/>}  >
-          <Route path="" element={<ContactForm />} />
+          <Route path="/Contact" element={<PrivateRouter />}>
+            <Route path="" element={<ContactForm />} />
           </Route>
 
-          <Route path="/Paths" element={<Paths />} />
+          <Route path="/Paths" element={<Paths />}>
+            <Route path="Paths/FS" element={<FS/>} />
+            <Route path="Paths/AWS" element={<AWS/>} />
+            
+          </Route>
+
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
